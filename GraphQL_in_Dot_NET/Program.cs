@@ -9,7 +9,8 @@ builder.Services.AddGraphQLServer()
     .AddQueryType<Query>()
     .AddType<Dog>()
     .AddType<Cat>()
-    .AddType<Parrot>();
+    .AddType<Parrot>()
+    .ModifyOptions(o => o.StripLeadingIFromInterface = true);
 
 var app = builder.Build();
 
